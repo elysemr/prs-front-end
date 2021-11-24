@@ -8,8 +8,7 @@ import { User } from './user.class';
 })
 export class UserService {
 
-  baseurl: string = "http://localhost1215/api/users";
-  userId: number = User.id;
+  baseurl: string = "http://elyserot.w33.wh-2.com/api/users";
 
 
   constructor(
@@ -20,12 +19,24 @@ export class UserService {
       return this.httpsvc.get(`${this.baseurl}`) as Observable<User[]>;
     }
 
-    getByPk(): Observable<User[]> {
+    getByPk(id: number): Observable<User> {
 
-      return this.httpsvc.get(`${this.baseurl}/${User.id}`) as Observable<User[]>;
+      return this.httpsvc.get(`${this.baseurl}/${id}`) as Observable<User>;
     }
 
-    addUser(): 
+    addUser(user: User): Observable<User> {
+      return this.httpsvc.post(`${this.baseurl}/${user}`, user) as Observable<User>;
+    }
+
+    editUser(user: User): Observable<User> {
+      return this.httpsvc.put(`${this.baseurl}/${user}`, user) as Observable<User>;
+    } 
+
+    deleteUser(id: number): Observable<User> {
+      return this.httpsvc.delete(`${this.baseurl}/${id}`) as Observable<User>;
+    }
+
+    //login()
 
 
 
