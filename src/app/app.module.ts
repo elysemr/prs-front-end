@@ -13,6 +13,7 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserCreateComponent } from './user/user-create/user-create.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
+import { E404Component } from './misc/e404/e404.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { UserLoginComponent } from './user/user-login/user-login.component';
     UserDetailComponent,
     UserEditComponent,
     UserCreateComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    E404Component
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,
