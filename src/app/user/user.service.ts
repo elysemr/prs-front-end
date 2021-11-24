@@ -8,7 +8,7 @@ import { User } from './user.class';
 })
 export class UserService {
 
-  baseurl: string = "http://elyserot.w33.wh-2.com/api/users";
+  baseurl: string = "http://localhost:1215/api/users";
 
 
   constructor(

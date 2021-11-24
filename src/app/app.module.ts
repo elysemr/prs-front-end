@@ -8,13 +8,23 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './misc/home/home.component';
 import { AboutComponent } from './misc/about/about.component';
 import { MenuComponent } from './misc/menu/menu/menu.component';
+import { UserListComponent } from './user/user-list/user-list.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import { UserEditComponent } from './user/user-edit/user-edit.component';
+import { UserCreateComponent } from './user/user-create/user-create.component';
+import { UserLoginComponent } from './user/user-login/user-login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    MenuComponent
+    MenuComponent,
+    UserListComponent,
+    UserDetailComponent,
+    UserEditComponent,
+    UserCreateComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,
