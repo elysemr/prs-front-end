@@ -1,4 +1,9 @@
-<table>
+<app-menu></app-menu>
+<h2>Users</h2>
+<label>Search Users:</label>
+<input type="text">
+
+<table class="table table-sm table-hover">
     <thead>
         <th>Id</th>
         <th>Username</th>
@@ -10,7 +15,7 @@
         <th>Actions</th>
     </thead>
     <tbody>
-        <tr>
+        <tr *ngFor="let user of users">
             <td>{{user.id}}</td>
             <td>{{user.username}}</td>
             <td>{{user.password}}</td>
@@ -24,3 +29,5 @@
         </tr>
     </tbody>
 </table>
+<br>
+<button type="button" class="btn btn-outline-dark btn-sm"><a routerLink="user/create">Create New User</a></button>

@@ -15,15 +15,15 @@ const routes: Routes = [
 {path: "home", component: HomeComponent},
 {path: "about", component: AboutComponent},
 {path: "menu", component: MenuComponent},
-{path: "e404", component: E404Component},
 
-{path: "user-list", component: UserListComponent},
-{path: "user-detail", component: UserDetailComponent},
-{path: "user-edit", component: UserEditComponent},
-{path: "user-create", component: UserCreateComponent},
-{path: "user-login", component: UserLoginComponent},
+{path: "user", component: UserListComponent},
+{path: "user/detail", component: UserDetailComponent},
+{path: "user/edit", component: UserEditComponent},
+{path: "user/create", component: UserCreateComponent},
+{path: "user/login", component: UserLoginComponent},
 
 
+{path: "**", component: E404Component},
 
 
 

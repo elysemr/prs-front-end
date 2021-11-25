@@ -1,9 +1,7 @@
 <div>
 <nav>
     <ul>
-        <li><a routerLink="/home">Home</a></li>
-        <li><a routerLink="/about">About</a></li>
-        <li><a routerLink="/user-list">Users</a></li>
+        <app-menuitem [menu]="m" *ngFor="let m of menus"></app-menuitem>
     </ul>
 </nav>
 </div>
