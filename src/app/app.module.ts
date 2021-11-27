@@ -15,6 +15,8 @@ import { UserCreateComponent } from './user/user-create/user-create.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { E404Component } from './misc/e404/e404.component';
 import { MenuitemComponent } from './misc/menu/menuitem/menuitem.component';
+import { ReviewPipe } from './user/review.pipe';
+import { AdminPipe } from './user/admin.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,10 @@ import { MenuitemComponent } from './misc/menu/menuitem/menuitem.component';
     UserCreateComponent,
     UserLoginComponent,
     E404Component,
-    MenuitemComponent
+    MenuitemComponent,
+    ReviewPipe,
+    AdminPipe
+    
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,
