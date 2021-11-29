@@ -18,11 +18,11 @@ const routes: Routes = [
 {path: "menu", component: MenuComponent},
 {path: "help", component: HelpComponent},
 
-{path: "user", component: UserListComponent},
-{path: "user/user-detail", component: UserDetailComponent},
-{path: "useruser-edit", component: UserEditComponent},
-{path: "user/user-create", component: UserCreateComponent},
-{path: "user/user-login", component: UserLoginComponent},
+{path: "user/list", component: UserListComponent},
+{path: "user/detail/:id", component: UserDetailComponent},
+{path: "user/edit/:id", component: UserEditComponent},
+{path: "user/create", component: UserCreateComponent},
+{path: "user/login", component: UserLoginComponent},
 
 
 {path: "**", component: E404Component},
