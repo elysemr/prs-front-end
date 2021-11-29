@@ -17,6 +17,7 @@ import { E404Component } from './misc/e404/e404.component';
 import { MenuitemComponent } from './misc/menu/menuitem/menuitem.component';
 import { ReviewPipe } from './user/review.pipe';
 import { AdminPipe } from './user/admin.pipe';
+import { SearchPipe } from './misc/search.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AdminPipe } from './user/admin.pipe';
     E404Component,
     MenuitemComponent,
     ReviewPipe,
-    AdminPipe
+    AdminPipe,
+    SearchPipe
     
   ],
   imports: [

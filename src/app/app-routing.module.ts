@@ -11,7 +11,7 @@ import { UserListComponent } from './user/user-list/user-list.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 
 const routes: Routes = [
-{path: "", redirectTo: "", pathMatch: "full"},
+{path: "", redirectTo: "/home", pathMatch: "full"},
 {path: "home", component: HomeComponent},
 {path: "about", component: AboutComponent},
 {path: "menu", component: MenuComponent},
