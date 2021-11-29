@@ -9,23 +9,23 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
+import { HelpComponent } from './misc/help/help.component';
 
 const routes: Routes = [
 {path: "", redirectTo: "/home", pathMatch: "full"},
 {path: "home", component: HomeComponent},
 {path: "about", component: AboutComponent},
 {path: "menu", component: MenuComponent},
+{path: "help", component: HelpComponent},
 
 {path: "user", component: UserListComponent},
-{path: "user/detail", component: UserDetailComponent},
-{path: "user/edit", component: UserEditComponent},
-{path: "user/create", component: UserCreateComponent},
-{path: "user/login", component: UserLoginComponent},
+{path: "user/user-detail", component: UserDetailComponent},
+{path: "useruser-edit", component: UserEditComponent},
+{path: "user/user-create", component: UserCreateComponent},
+{path: "user/user-login", component: UserLoginComponent},
 
 
 {path: "**", component: E404Component},
-
-
 
 ];
 

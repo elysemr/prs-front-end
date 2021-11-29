@@ -18,6 +18,7 @@ import { MenuitemComponent } from './misc/menu/menuitem/menuitem.component';
 import { ReviewPipe } from './user/review.pipe';
 import { AdminPipe } from './user/admin.pipe';
 import { SearchPipe } from './misc/search.pipe';
+import { HelpComponent } from './misc/help/help.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SearchPipe } from './misc/search.pipe';
     MenuitemComponent,
     ReviewPipe,
     AdminPipe,
-    SearchPipe
+    SearchPipe,
+    HelpComponent
     
   ],
   imports: [
