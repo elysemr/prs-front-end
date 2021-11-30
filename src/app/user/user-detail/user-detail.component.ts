@@ -28,4 +28,5 @@ export class UserDetailComponent implements OnInit {
     });
   }
 
+
 }

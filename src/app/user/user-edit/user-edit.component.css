@@ -23,4 +23,11 @@ h4 {
 #btn {
     margin-left: 0px;
     margin-bottom: 8px;
+    padding: 0px;
 }
+
+#alert {
+    font: bold;
+    color: red;
+}
+

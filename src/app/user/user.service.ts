@@ -25,14 +25,14 @@ export class UserService {
     }
 
     addUser(user: User): Observable<User> {
-      return this.httpsvc.post(`${this.baseurl}/${user}`, user) as Observable<User>;
+      return this.httpsvc.post(`${this.baseurl}`, user) as Observable<User>;
     }
 
-    editUser(user: User): Observable<User> {
-      return this.httpsvc.put(`${this.baseurl}/${user}`, user) as Observable<User>;
+    editUser(user: User): Observable<any> {
+      return this.httpsvc.put(`${this.baseurl}/${user.id}`, user) as Observable<User>;
     } 
 
-    deleteUser(id: number): Observable<User> {
+    deleteUser(id: number): Observable<any> {
       return this.httpsvc.delete(`${this.baseurl}/${id}`) as Observable<User>;
     }
 

@@ -1,7 +1,6 @@
 a {
     margin: 0;
     text-decoration: none;
-    color: blue
 }
 
 a:hover {
@@ -31,4 +30,8 @@ h4 {
     display: inline-block;
     margin-left: 12px;
     margin-right: 1px;
+}
+
+#btn:hover {
+    color: white;
 }
