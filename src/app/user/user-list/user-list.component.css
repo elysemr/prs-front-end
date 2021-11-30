@@ -35,3 +35,7 @@ h4 {
 #btn:hover {
     color: white;
 }
+
+#delete {
+    margin-left: 2px;
+}

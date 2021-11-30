@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { User } from '../user.class';
 import { UserService } from '../user.service';
 
@@ -14,6 +15,7 @@ export class UserEditComponent implements OnInit {
   user!: User;
   pw!: string;
   pw2!: string;
+  confirmDelete: boolean = false;
   
   constructor(private route: ActivatedRoute, private usersvc: UserService, private router: Router) { }
   
@@ -51,4 +53,37 @@ export class UserEditComponent implements OnInit {
       }
     });
   }
+
+  delete(): void {
+    if(this.confirmDelete = !this.confirmDelete)
+    {
+      Swal.fire({
+        title: "Permanently Delete?",
+        text: "Selecting 'Delete' will delete this user forever.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Delete",
+        confirmButtonColor: "red",
+        cancelButtonText: "Back to User Detail",
+      }).then((res) =>  {
+        if(res.isConfirmed) {
+          this.confirm();
+        } else if (res.isDismissed) {
+          this.router.navigateByUrl("/user/detail/{{user.id}}");
+        }
+      })
+    }
+  }
+  confirm(): void {
+    this.usersvc.deleteUser(this.user.id).subscribe({
+      next: (res: any) => {
+        console.debug(res, "User deleted.");
+        this.router.navigateByUrl("/user/list");
+        
+      }
+    })
+  }
+
+
+
 }
