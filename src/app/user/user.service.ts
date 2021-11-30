@@ -24,7 +24,7 @@ export class UserService {
       return this.httpsvc.get(`${this.baseurl}/${id}`) as Observable<User>;
     }
 
-    addUser(user: User): Observable<User> {
+    addUser(user: User): Observable<any> {
       return this.httpsvc.post(`${this.baseurl}`, user) as Observable<User>;
     }
 

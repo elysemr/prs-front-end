@@ -1,0 +1,28 @@
+h3 {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+h4 {
+    display: inline-block;
+    margin-right: 0px;
+}
+
+#btn{
+    display: inline-block;
+    margin-left: 0px;
+    margin-bottom: 8px;;
+}
+
+button {
+    margin-left: 10px;
+}
+
+table {
+    margin-left: 15px;
+}
+
+#alert {
+    color: red;
+}

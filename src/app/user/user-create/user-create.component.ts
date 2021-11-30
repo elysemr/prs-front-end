@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { User } from '../user.class';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user-create',
@@ -7,9 +10,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserCreateComponent implements OnInit {
 
-  constructor() { }
+  user: User = new User();
+  pw!: string;
+  pw2!: string;
+
+  constructor(private usersvc: UserService, private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+
+  save(): void {
+    this.usersvc.addUser(this.user).subscribe({
+      next: (res: any) => {
+        console.log("User created.");
+        res as User;
+        this.router.navigateByUrl("/user/list");
+      },
+      error: (err: any) => {
+        console.error(err);
+      }
+    });
+  }
+
+  chkPwd(): void {
+    this.pw2 = "";
+    if(this.user.password !== this.pw) {
+      this.pw2 = "Passwords don't match.";
+    }
   }
 
 }

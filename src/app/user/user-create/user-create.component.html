@@ -1,1 +1,23 @@
-<p>user-create works!</p>
+<app-menu></app-menu>
+<div>
+    <h3>Create New User</h3><h4>|</h4>
+    <button id="btn" type="button" class="btn btn-link"><a  routerLink="/user/list">Back to User List</a></button>
+    <br>
+    <table>
+        <tr><td>Id: </td><td><input type="text" [(ngModel)]="user.id" size=3 disabled></td></tr>
+        <tr><td>Username: </td><td><input type="text" [(ngModel)]="user.username"></td></tr>
+        <tr><td>Password: </td><td><input type="password" [(ngModel)]="user.password"></td></tr>
+        <tr><td>Re-Enter Password: </td><td><input type="password" [(ngModel)]="pw" (blur)="chkPwd()"></td></tr>
+        <span id="alert">{{pw2}}</span>
+        <tr><td>First Name: </td><td><input type="text" [(ngModel)]="user.firstname"></td></tr>
+        <tr><td>Last Name: </td><td><input type="text" [(ngModel)]="user.lastname"></td></tr>
+        <tr><td>Phone: </td><td><input type="text" [(ngModel)]="user.phone"></td></tr>
+        <tr><td>Email: </td><td><input type="text" [(ngModel)]="user.email" size=30> </td></tr>
+        <tr><td>Reviewer:</td><td><input type="checkbox" [(ngModel)]="user.isReviewer"></td></tr>
+        <tr><td>Admin:</td><td><input type="checkbox" [(ngModel)]="user.isAdmin"></td></tr>
+        </table>
+        <br>
+        <button (click)="save()" class="btn btn-success">Create User</button>
+        <button class="btn btn-danger">Delete User</button>
+        
+    </div>
