@@ -1,0 +1,38 @@
+
+    <app-menu></app-menu>
+    <h2>Products</h2>
+    <div>
+    <label>Search Products: </label>
+    <input [(ngModel)]="searchCriteria" type="text"> 
+    <h4> | </h4>
+    <button type="button" class="btn btn-outline-primary btn-sm"><a id="btn" routerLink="/product/create">Add Product</a></button>
+    </div>  
+    <br>
+    <table class="table table-sm table-hover">
+        <thead>
+            <th>Id</th>
+            <th>Part Number</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Unit</th>
+            <th>Vendor</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products | search: searchCriteria">
+                <td>{{product.id}}</td>
+                <td>{{product.partNbr}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.unit}}</td>
+                <td>{{product.vendorName}}</td>
+                <td><a routerLink="/product/detail/{{product.id}}">Detail</a> | 
+                    <a routerLink="/product/edit/{{product.id}}">Edit</a> 
+                    <!-- | 
+                    <button id="delete" class="btn btn-danger btn-sm" (click)="delete()">Delete</button></td> -->
+                
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    

@@ -1,0 +1,44 @@
+
+    <app-menu></app-menu>
+    <h2>Vendors</h2>
+    <div>
+    <label>Search Vendors: </label>
+    <input [(ngModel)]="searchCriteria" type="text"> 
+    <h4> | </h4>
+    <button type="button" class="btn btn-outline-primary btn-sm"><a id="btn" routerLink="/vendor/create">Add New Vendor</a></button>
+    </div>  
+    <br>
+    <table class="table table-sm table-hover">
+        <thead>
+            <th>Id</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let vendor of vendors | search: searchCriteria">
+                <td>{{vendor.id}}</td>
+                <td>{{vendor.code}}</td>
+                <td>{{vendor.name}}</td>
+                <td>{{vendor.address}}</td>
+                <td>{{vendor.city}}</td>
+                <td>{{vendor.state}}</td>
+                <td>{{vendor.zip}}</td>
+                <td>{{vendor.phone}}</td>
+                <td>{{vendor.email}}</td>
+                <td><a routerLink="/vendor/detail/{{vendor.id}}">Detail</a> | 
+                    <a routerLink="/vendor/edit/{{vendor.id}}">Edit</a> 
+                    <!-- | 
+                    <button id="delete" class="btn btn-danger btn-sm" (click)="delete()">Delete</button></td> -->
+                
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    

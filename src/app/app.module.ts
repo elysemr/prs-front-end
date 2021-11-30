@@ -19,6 +19,15 @@ import { ReviewPipe } from './user/review.pipe';
 import { AdminPipe } from './user/admin.pipe';
 import { SearchPipe } from './misc/search.pipe';
 import { HelpComponent } from './misc/help/help.component';
+import { VendorListComponent } from './vendor/vendor-list/vendor-list.component';
+import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
+import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
+import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
+import { NullPipe } from './vendor/null.pipe';
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { ProductEditComponent } from './product/product-edit/product-edit.component';
+import { ProductCreateComponent } from './product/product-create/product-create.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +45,16 @@ import { HelpComponent } from './misc/help/help.component';
     ReviewPipe,
     AdminPipe,
     SearchPipe,
-    HelpComponent
+    HelpComponent,
+    VendorListComponent,
+    VendorDetailComponent,
+    VendorEditComponent,
+    VendorCreateComponent,
+    NullPipe,
+    ProductListComponent,
+    ProductDetailComponent,
+    ProductEditComponent,
+    ProductCreateComponent
     
   ],
   imports: [

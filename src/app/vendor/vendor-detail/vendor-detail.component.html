@@ -1,0 +1,22 @@
+<app-menu></app-menu>
+<div *ngIf="vendor">
+
+    <br>
+    <h3>{{vendor.name}}</h3><h4>|</h4><button id="btn" type="button" class="btn btn-link"><a routerLink="/vendor/list">Back to Vendor List</a></button>
+    <br>
+    <label>Id: {{vendor.id}}</label>
+    <label>Code: {{vendor.code}}</label>
+    <label>Name: {{vendor.name}}</label>
+    <label>Address: {{vendor.address}}</label>
+    <label>City: {{vendor.city}}</label>
+    <label>State: {{vendor.state}}</label>
+    <label>Zip: {{vendor.zip}}</label>
+    <label>Phone: {{vendor.phone}}</label>
+    <label>Email: {{vendor.email}}</label>            
+    
+    <br>
+    <button class="btn btn-warning"><a routerLink="/vendor/edit/{{this.vendor.id}}">Edit Vendor</a></button>
+    <button id="delete" class="btn btn-danger" (click)="delete()">Delete</button>
+    
+</div>
+    

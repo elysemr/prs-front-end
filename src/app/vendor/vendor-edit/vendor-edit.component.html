@@ -1,0 +1,23 @@
+<app-menu></app-menu>
+<div *ngIf="vendor">
+
+    <br>
+    <h3>Edit {{vendor.name}}</h3><h4>|</h4>
+    <button type="button" class="btn btn-link"><a id="btn" routerLink="/vendor/list">Back to Vendor list</a></button>
+    <br>
+    <table>
+    <tr><td>Id: </td><td><input type="text" [(ngModel)]="vendor.id" size=3 disabled></td></tr>
+    <tr><td>Code: </td><td><input type="text" [(ngModel)]="vendor.code"></td></tr>
+    <tr><td>Name: </td><td><input type="text" [(ngModel)]="vendor.name"></td></tr>
+    <tr><td>Address: </td><td><input type="text" [(ngModel)]="vendor.address" size=30></td></tr>
+    <tr><td>City: </td><td><input type="text" [(ngModel)]="vendor.city"></td></tr>
+    <tr><td>State: </td><td><input type="text" [(ngModel)]="vendor.state" size=2></td></tr>
+    <tr><td>Zip: </td><td><input type="text" [(ngModel)]="vendor.zip" size=5> </td></tr>
+    <tr><td>Phone: </td><td><input type="text" [(ngModel)]="vendor.phone"> </td></tr>
+    <tr><td>Email: </td><td><input type="text" [(ngModel)]="vendor.email" size=30> </td></tr>
+    </table>
+    <br>
+    <button (click)="save()" class="btn btn-success">Save Vendor</button>
+    <button id="delete" class="btn btn-danger" (click)="delete()">Delete Vendor</button>
+    
+</div>

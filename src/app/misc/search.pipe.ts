@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SearchPipe implements PipeTransform {
 
-  transform(arr: any[], searchCriteria: string =""): any[] {
+  transform(arr: any[], searchCriteria: string = ""): any[] {
     if(searchCriteria === "") {return arr;}
     searchCriteria = searchCriteria.toLowerCase();
     let selArr: any[] = [];
@@ -16,7 +16,7 @@ export class SearchPipe implements PipeTransform {
         a.firstname.toString().toLowerCase().includes(searchCriteria) ||
         a.lastname.toString().toLowerCase().includes(searchCriteria) ||
         a.email.toString().toLowerCase().includes(searchCriteria) ||
-        a.phone.toString().toLowerCase().includes(searchCriteria)
+        a.phone.toString().toLowerCase().includes(searchCriteria) 
       ) {
         selArr.push(a);
       }

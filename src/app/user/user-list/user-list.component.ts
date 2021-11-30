@@ -26,7 +26,7 @@ export class UserListComponent implements OnInit {
     this.usrsvc.list().subscribe({
       next: (res) => {
         console.debug("Users:", res);
-        this.users=res;
+        this.users = res;
       },
       error: (err) => {
         console.error(err);
