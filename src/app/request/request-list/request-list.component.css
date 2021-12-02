@@ -1,0 +1,41 @@
+a {
+    margin: 0;
+    text-decoration: none;
+}
+
+a:hover {
+    color: maroon;
+}
+
+button {
+    margin-left: 12px;
+    margin-top: none;
+    margin-bottom: 4px;
+}
+
+label {
+    margin-left: 7px;
+    margin-right: 4px;
+}
+
+table{
+    margin-left: 5px;
+}
+
+h2 {
+    margin-left: 5px;
+}
+
+h4 {
+    display: inline-block;
+    margin-left: 12px;
+    margin-right: 1px;
+}
+
+#btn:hover {
+    color: white;
+}
+
+#delete {
+    margin-left: 2px;
+}

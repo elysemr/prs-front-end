@@ -18,6 +18,7 @@ import { ProductListComponent } from './product/product-list/product-list.compon
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 import { ProductCreateComponent } from './product/product-create/product-create.component';
+import { RequestListComponent } from './request/request-list/request-list.component';
 
 const routes: Routes = [
 {path: "", redirectTo: "/home", pathMatch: "full"},
@@ -42,6 +43,13 @@ const routes: Routes = [
 {path: "product/edit/:id", component: ProductEditComponent},
 {path: "product/create", component: ProductCreateComponent},
 
+{path: "request/list", component: RequestListComponent},
+{path: "request/detail/:id", component: RequestListComponent},
+{path: "request/edit/:id", component: RequestListComponent},
+{path: "request/create", component: RequestListComponent},
+{path: "request/review", component: RequestListComponent},
+{path: "request/lines", component: RequestListComponent},
+{path: "request/review-lines", component: RequestListComponent},
 
 {path: "**", component: E404Component},
 
