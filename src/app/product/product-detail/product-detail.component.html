@@ -1,1 +1,19 @@
-<p>product-detail works!</p>
+<app-menu></app-menu>
+<div *ngIf="product">
+
+    <br>
+    <h3>{{product.name}}</h3><h4>|</h4><button id="btn" type="button" class="btn btn-link"><a routerLink="/product/list">Back to Product list</a></button>
+    <br>
+    <label>Id: {{product.id}}</label>
+    <label>Part Number: {{product.partNbr}}</label>
+    <label>Name: {{product.name}}</label>
+    <label>Price: {{product.price | currency}}</label>
+    <label>Unit: {{product.unit}}</label>
+    <label>Vendor: {{product.vendor?.name}}</label>           
+    
+    <br>
+    <button class="btn btn-warning"><a routerLink="/product/edit/{{this.product.id}}">Edit Product</a></button>
+    <button id="delete" class="btn btn-danger" (click)="delete()">Delete</button>
+    
+</div>
+    

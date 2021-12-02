@@ -6,10 +6,12 @@ import { Vendor } from './vendor.class';
 })
 export class NullPipe implements PipeTransform {
 
-  transform(nullVal: any): string {
-    nullVal = null;
-    if (nullVal) {}
-    return ""; 
+  transform(nullVal:any): string {
+    if (nullVal === null ){
+      return "N/A";
+    }
+    return nullVal;
+    
    
 }
 

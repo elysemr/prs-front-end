@@ -15,21 +15,21 @@
             <th>Name</th>
             <th>Price</th>
             <th>Unit</th>
-            <th>Vendor</th>
+            <th>Vendor</th> 
             <th>Actions</th>
         </thead>
         <tbody>
-            <tr *ngFor="let product of products | search: searchCriteria">
+            <tr *ngFor="let product of products | prodSearch: searchCriteria">
                 <td>{{product.id}}</td>
                 <td>{{product.partNbr}}</td>
                 <td>{{product.name}}</td>
-                <td>{{product.price}}</td>
+                <td>{{product.price | currency}}</td>
                 <td>{{product.unit}}</td>
-                <td>{{product.vendorName}}</td>
+                <td>{{product.vendor.name}}</td>
                 <td><a routerLink="/product/detail/{{product.id}}">Detail</a> | 
-                    <a routerLink="/product/edit/{{product.id}}">Edit</a> 
+                    <a routerLink="/product/edit/{{product.id}}">Edit</a> </td>
                     <!-- | 
-                    <button id="delete" class="btn btn-danger btn-sm" (click)="delete()">Delete</button></td> -->
+                    <button id="delete" class="btn btn-danger btn-sm" (click)="delete()">Delete</button> -->
                 
             </tr>
         </tbody>

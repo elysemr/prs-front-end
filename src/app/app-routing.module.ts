@@ -38,8 +38,8 @@ const routes: Routes = [
 {path: "vendor/create", component: VendorCreateComponent},
 
 {path: "product/list", component: ProductListComponent},
-{path: "product/detail", component: ProductDetailComponent},
-{path: "product/edit", component: ProductEditComponent},
+{path: "product/detail/:id", component: ProductDetailComponent},
+{path: "product/edit/:id", component: ProductEditComponent},
 {path: "product/create", component: ProductCreateComponent},
 
 

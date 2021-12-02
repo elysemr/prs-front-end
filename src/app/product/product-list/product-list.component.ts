@@ -23,8 +23,9 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
     this.prodsvc.list().subscribe({
       next: (res) => {
-        console.debug("Products", res);
-        this.products = res;
+        console.debug("Products:", res);
+        this.products = res as Product[];
+        
       },
       error: (err) => {
         console.error(err);
@@ -32,33 +33,33 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  delete(): void {
-    if(this.confirmDelete = !this.confirmDelete)
-    {
-      Swal.fire({
-        title: "Permanently Delete?",
-        text: "Selecting 'Delete' will delete this product forever.",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonText: "Delete",
-        confirmButtonColor: "red",
-        cancelButtonText: "Back to Products",
-      }).then((res) =>  {
-        if(res.isConfirmed) {
-          this.confirm();
-        } else if (res.isDismissed) {
-          this.router.navigateByUrl("/product/list");
-        }
-      })
-    }
-  }
-  confirm(): void {
-    this.prodsvc.deleteProduct(this.product.id).subscribe({
-      next: (res: any) => {
-        console.debug(res, "Product deleted.");
+  // delete(): void {
+  //   if(this.confirmDelete = !this.confirmDelete)
+  //   {
+  //     Swal.fire({
+  //       title: "Permanently Delete?",
+  //       text: "Selecting 'Delete' will delete this product forever.",
+  //       icon: "warning",
+  //       showCancelButton: true,
+  //       confirmButtonText: "Delete",
+  //       confirmButtonColor: "red",
+  //       cancelButtonText: "Back to Products",
+  //     }).then((res) =>  {
+  //       if(res.isConfirmed) {
+  //         this.confirm();
+  //       } else if (res.isDismissed) {
+  //         this.router.navigateByUrl("/product/list");
+  //       }
+  //     })
+  //   }
+  // }
+  // confirm(): void {
+  //   this.prodsvc.deleteProduct(this.product.id).subscribe({
+  //     next: (res: any) => {
+  //       console.debug(res, "Product deleted.");
         
-      }
-    })
-  }
+  //     }
+  //   })
+  // }
 
 }

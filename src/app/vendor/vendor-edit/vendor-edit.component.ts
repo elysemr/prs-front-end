@@ -59,7 +59,7 @@ export class VendorEditComponent implements OnInit {
         if(res.isConfirmed) {
           this.confirm();
         } else if (res.isDismissed) {
-          this.router.navigateByUrl("/venoor/detail/{{vendor.id}}");
+          this.router.navigateByUrl("/vendor/detail/{{vendor.id}}");
         }
       })
     }

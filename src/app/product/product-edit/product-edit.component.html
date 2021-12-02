@@ -1,1 +1,20 @@
-<p>product-edit works!</p>
+<app-menu></app-menu>
+<div *ngIf="product">
+
+    <br>
+    <h3>Edit {{product.name}}</h3><h4>|</h4>
+    <button type="button" class="btn btn-link"><a id="btn" routerLink="/product/list">Back to product list</a></button>
+    <br>
+    <table>
+    <tr><td>Id: </td><td><input type="text" [(ngModel)]="product.id" size=3 disabled></td></tr>
+    <tr><td>Part Number: </td><td><input type="text" [(ngModel)]="product.partNbr" size=5></td></tr>
+    <tr><td>Name: </td><td><input type="text" [(ngModel)]="product.name"></td></tr>
+    <tr><td>Price: </td><td><input type="text" [(ngModel)]="product.price" size=7></td></tr>
+    <tr><td>Unit: </td><td><input type="text" [(ngModel)]="product.unit"></td></tr>
+    <tr><td>Vendor: </td><td><select [(ngModel)]="product.vendorId" class="select-list"><option *ngFor="let v of vendors" [ngValue]=v.id>{{v.name}}</option></select></td></tr>
+    </table>
+    <br>
+    <button (click)="save()" class="btn btn-success">Save Product</button>
+    <button id="delete" class="btn btn-danger" (click)="delete()">Delete Product</button>
+    
+</div>
