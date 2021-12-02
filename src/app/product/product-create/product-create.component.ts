@@ -12,11 +12,10 @@ import { ProductService } from '../product.service';
 })
 export class ProductCreateComponent implements OnInit {
 
-  id: any;
-  product!: Product;
+  product: Product = new Product();
   vendors!: Vendor[];
 
-  constructor(private prodsvc: ProductService, private vndsvc: VendorService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private prodsvc: ProductService, private vndsvc: VendorService, private router: Router) { }
 
   ngOnInit(): void {
     this.vndsvc.list().subscribe({
