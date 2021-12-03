@@ -17,7 +17,7 @@ export class ProductListComponent implements OnInit {
   confirmDelete: boolean = false;
 
   constructor(
-    private prodsvc: ProductService, private router: Router
+    private prodsvc: ProductService,
   ) { }
 
   ngOnInit(): void {

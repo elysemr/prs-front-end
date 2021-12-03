@@ -34,7 +34,7 @@ editRequest(request: Request): Observable<any> {
   return this.httpsvc.put(`${this.baseurl}/${request.id}`, request) as Observable<any>;
 }
 
-deleteProduct(id: number): Observable<any> {
+deleteRequest(id: number): Observable<any> {
   return this.httpsvc.delete(`${this.baseurl}/${id}`) as Observable<Request>;
 }
 

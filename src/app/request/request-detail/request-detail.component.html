@@ -1,1 +1,21 @@
-<p>request-detail works!</p>
+<app-menu></app-menu>
+<div *ngIf="request">
+
+    <br>
+    <h3>{{request.userId}}: {{request.description}}</h3><h4>|</h4><button id="btn" type="button" class="btn btn-link"><a routerLink="/request/list">Back to request list</a></button>
+    <br>
+    <label>Id: {{request.id}}</label>
+    <label>Description: {{request.description}}</label>
+    <label>Justification: {{request.justification}}</label>
+    <label>Rejection Reason: {{request.rejectionReason}}</label>
+    <label>Delivery Mode: {{request.deliveryMode}}</label>
+    <label>Status: {{request.status}}</label>
+    <label>Total: {{request.total | currency}}</label>
+    <label>User: {{request.userId}}</label>           
+    
+    <br>
+    <button class="btn btn-warning"><a routerLink="/request/edit/{{this.request.id}}">Edit Product</a></button>
+    <button id="delete" class="btn btn-danger" (click)="delete()">Delete</button>
+    
+</div>
+    

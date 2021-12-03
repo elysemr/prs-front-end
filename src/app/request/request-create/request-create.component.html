@@ -1,1 +1,21 @@
-<p>request-create works!</p>
+<app-menu></app-menu>
+<div>
+
+    <br>
+    <h3>Create Request</h3><h4>|</h4>
+    <button type="button" class="btn btn-link"><a id="btn" routerLink="/product/list">Back to product list</a></button>
+    <br>
+    <table>
+    <tr><td>Id: </td><td><input type="text" [(ngModel)]="request.id" size=3 disabled></td></tr>
+    <tr><td>Description: </td><td><input type="text" [(ngModel)]="request.description" size=5></td></tr>
+    <tr><td>Justification: </td><td><input type="text" [(ngModel)]="request.justification"></td></tr>
+    <tr><td>Rejection Reason: </td><td><input type="text" [(ngModel)]="request.rejectionReason" disabled></td></tr>
+    <tr><td>Delivery Mode: </td><td><input type="text" [(ngModel)]="request.deliveryMode"></td></tr>
+    <tr><td>Status: </td><td><input type="text" [(ngModel)]="request.status" size=10 disabled></td></tr>
+    <tr><td>Total: </td><td><input type="text" [(ngModel)]="request.total" size=7></td></tr>
+    <tr><td>User: </td><td><input type="text" [(ngModel)]="request.userId" disabled></td></tr>
+    </table>
+    <br>
+    <button (click)="save()" class="btn btn-success">Save Request</button>
+    
+</div>

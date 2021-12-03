@@ -11,7 +11,7 @@ import { ProductService } from '../product.service';
 })
 export class ProductDetailComponent implements OnInit {
 
-  id:any;
+  id: any;
   product!: Product;
 
   confirmDelete: boolean = false;

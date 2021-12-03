@@ -9,10 +9,10 @@ rejectionReason: string = "";
 deliveryMode: string = "";
 status: string = "";
 total: number = 0.00;
-username: string = "";
+userUsername: string = "";
 
 userId: number = 0;
-user?: User;
+user!: User;
 
 //requestLines!: RequestLines[];
 

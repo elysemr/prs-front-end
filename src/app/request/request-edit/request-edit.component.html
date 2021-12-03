@@ -1,1 +1,22 @@
-<p>request-edit works!</p>
+<app-menu></app-menu>
+<div *ngIf="request">
+
+    <br>
+    <h3>Edit request for {{request.description}} by {{request.userId}}</h3><h4>|</h4>
+    <button type="button" class="btn btn-link"><a id="btn" routerLink="/product/list">Back to product list</a></button>
+    <br>
+    <table>
+    <tr><td>Id: </td><td><input type="text" [(ngModel)]="request.id" size=3 disabled></td></tr>
+    <tr><td>Description: </td><td><input type="text" [(ngModel)]="request.description" size=5></td></tr>
+    <tr><td>Justification: </td><td><input type="text" [(ngModel)]="request.justification"></td></tr>
+    <tr><td>Rejection Reason: </td><td><label>{{request.rejectionReason | null}}</label></td></tr>
+    <tr><td>Delivery Mode: </td><td><input type="text" [(ngModel)]="request.deliveryMode"></td></tr>
+    <tr><td>Status: </td><td><input type="text" [(ngModel)]="request.status"></td></tr>
+    <tr><td>Total: </td><td><input type="text" [(ngModel)]="request.total"></td></tr>
+    <tr><td>User: </td><td><label>{{request.userId}}</label></td></tr>
+    </table>
+    <br>
+    <button (click)="save()" class="btn btn-success">Save Request</button>
+    <button id="delete" class="btn btn-danger" (click)="delete()">Delete Request</button>
+    
+</div>

@@ -38,6 +38,7 @@ import { RequestLinesComponent } from './request/request-lines/request-lines.com
 import { RequestReviewComponent } from './request/request-review/request-review.component';
 import { RequestReviewLinesComponent } from './request/request-review-lines/request-review-lines.component';
 import { ReqSearchPipe } from './request/req-search.pipe';
+import { UsernamePipe } from './request/username.pipe';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { ReqSearchPipe } from './request/req-search.pipe';
     RequestLinesComponent,
     RequestReviewComponent,
     RequestReviewLinesComponent,
-    ReqSearchPipe
+    ReqSearchPipe,
+    UsernamePipe
     
   ],
   imports: [

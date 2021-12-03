@@ -19,6 +19,12 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 import { ProductCreateComponent } from './product/product-create/product-create.component';
 import { RequestListComponent } from './request/request-list/request-list.component';
+import { RequestDetailComponent } from './request/request-detail/request-detail.component';
+import { RequestEditComponent } from './request/request-edit/request-edit.component';
+import { RequestCreateComponent } from './request/request-create/request-create.component';
+import { RequestReviewComponent } from './request/request-review/request-review.component';
+import { RequestLinesComponent } from './request/request-lines/request-lines.component';
+import { RequestReviewLinesComponent } from './request/request-review-lines/request-review-lines.component';
 
 const routes: Routes = [
 {path: "", redirectTo: "/home", pathMatch: "full"},
@@ -44,12 +50,12 @@ const routes: Routes = [
 {path: "product/create", component: ProductCreateComponent},
 
 {path: "request/list", component: RequestListComponent},
-{path: "request/detail/:id", component: RequestListComponent},
-{path: "request/edit/:id", component: RequestListComponent},
-{path: "request/create", component: RequestListComponent},
-{path: "request/review", component: RequestListComponent},
-{path: "request/lines", component: RequestListComponent},
-{path: "request/review-lines", component: RequestListComponent},
+{path: "request/detail/:id", component: RequestDetailComponent},
+{path: "request/edit/:id", component: RequestEditComponent},
+{path: "request/create", component: RequestEditComponent},
+{path: "request/review", component: RequestReviewComponent},
+{path: "request/lines", component: RequestLinesComponent},
+{path: "request/review-lines", component: RequestReviewLinesComponent},
 
 {path: "**", component: E404Component},
 
