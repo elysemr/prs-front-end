@@ -1,1 +1,29 @@
-<p>request-review-lines works!</p>
+<app-menu></app-menu>
+<div>
+<br>
+<h3>Requests to Review</h3><h4>|</h4>
+<input [(ngModel)]="searchCriteria" type="text">
+<br>
+<table class="table table-sm">
+    <thead>
+        <th>Description</th>
+        <th>Justification</th>
+        <th>Delivery Mode</th>
+        <th>Status</th> 
+        <th>Total</th>
+        <th>User</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let request of requests">
+                <td>{{request.description}}</td>
+                <td>{{request.justification}}</td>
+                <td>{{request.deliveryMode}}</td>
+                <td>{{request.status}}</td>
+                <td>{{request.total | currency}}</td>
+                <td>{{request.userId}}</td>
+                <td><button class="btn btn-warning btn-sm"><a routerLink="/request/review/{{request.id}}">Review</a></button></td>
+            </tr>
+    </tbody>
+</table>
+
+</div>
