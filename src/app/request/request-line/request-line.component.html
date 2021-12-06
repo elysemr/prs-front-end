@@ -1,0 +1,55 @@
+<app-menu></app-menu>
+<div *ngIf="request">
+<br>
+<h3>Requests</h3><h4>|</h4>
+<button type="button" class="btn btn-link"><a id="btn" routerLink="/product/list">Back to product list</a></button>
+<h5>Item: {{request.description}} | User: {{request.userId}}</h5>
+<br>
+<table class="table table-sm">
+    <thead>
+        <th>Id</th>
+        <th>Description</th>
+        <th>Justification</th>
+        <th>Rejection Reason</th>
+        <th>Delivery Mode</th>
+        <th>Status</th> 
+        <th>Total</th>
+        <th>User</th>
+        <th>Actions</th>
+    </thead>
+    <tbody>
+        <tr>
+                <td>{{request.id}}</td>
+                <td>{{request.description}}</td>
+                <td>{{request.justification}}</td>
+                <td>{{request.rejectionReason | null}}</td>
+                <td>{{request.deliveryMode}}</td>
+                <td>{{request.status}}</td>
+                <td>{{request.total | currency}}</td>
+                <td>{{request.userId}}</td>
+            </tr>
+    </tbody>
+</table>
+<h5>Requestlines</h5> <h4>|</h4>
+<a routerLink="requestline/create/{{request.id}}">Add New</a>
+<br>
+<table class="table table-sm table-hover">
+<thead>
+    <th>Id</th>
+    <th>Product</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th>Subtotal</th>
+    <th>Actions</th>
+</thead>
+<tbody *ngFor="let rl of request.requestline">
+    <td>{{rl.id}}</td>
+    <td>{{rl.product}}</td>
+    <td>{{rl.quantity}}</td>
+    <td>{{(rl.product !== undefined ? rl.product.price : -1) | currency}}</td>
+    <td>{{rl.quantity * (rl.product !== undefined ? rl.product.price : -1) | currency}}</td>
+    <td><button (click)="editRl(rl.id)" class="btn btn-warning btn-sm"></button> | <button (click)="deleteRl(rl.id)" class="btn btn-danger btn-sm"></button></td>
+</tbody>
+</table>
+
+</div>

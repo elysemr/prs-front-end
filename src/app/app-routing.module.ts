@@ -24,6 +24,7 @@ import { RequestEditComponent } from './request/request-edit/request-edit.compon
 import { RequestReviewLinesComponent } from './request/request-review-lines/request-review-lines.component';
 import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
 import { RequestCreateComponent } from './request/request-create/request-create.component';
+import { RequestLineComponent } from './request/request-line/request-line.component';
 
 const routes: Routes = [
 {path: "", redirectTo: "/login", pathMatch: "full"},
@@ -51,7 +52,8 @@ const routes: Routes = [
 {path: "request/list", component: RequestListComponent},
 {path: "request/detail/:id", component: RequestDetailComponent},
 {path: "request/edit/:id", component: RequestEditComponent},
-{path: "request/create", component: RequestEditComponent},
+{path: "request/create", component: RequestCreateComponent},
+{path: "request/request-line", component: RequestLineComponent},
 {path: "request/review-lines", component: RequestReviewLinesComponent},
 
 {path: "requestline/edit/:id", component: RequestlineEditComponent},

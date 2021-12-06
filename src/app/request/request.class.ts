@@ -1,3 +1,4 @@
+import { Requestline } from "../requestline/requestline.class";
 import { User } from "../user/user.class";
 
 
@@ -14,7 +15,7 @@ userUsername: string = "";
 userId: number = 0;
 user!: User;
 
-//requestLines!: RequestLines[];
+requestline!: Requestline[];
 
 constructor() {}
 }

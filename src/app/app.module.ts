@@ -39,6 +39,7 @@ import { ReqSearchPipe } from './request/req-search.pipe';
 import { UsernamePipe } from './request/username.pipe';
 import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
 import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
+import { RequestLineComponent } from './request/request-line/request-line.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { RequestlineCreateComponent } from './requestline/requestline-create/req
     ReqSearchPipe,
     UsernamePipe,
     RequestlineEditComponent,
-    RequestlineCreateComponent
+    RequestlineCreateComponent,
+    RequestLineComponent
     
   ],
   imports: [
