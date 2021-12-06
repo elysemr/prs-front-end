@@ -1,0 +1,17 @@
+<app-menu></app-menu>
+<div *ngIf="requestline">
+
+    <br>
+    <h3>Edit Request</h3><h4>|</h4>
+    <button type="button" class="btn btn-link"><a id="btn" routerLink="/request/lines">Back to request list</a></button>
+    <br>
+    <table>
+    <tr><td>Id: </td><td><input type="text" [(ngModel)]="requestline.id" size=3 disabled></td></tr>
+    <tr><td>Product: </td><td><select [(ngModel)]="requestline.productId"><option *ngFor="let p of products" value="{{p.id}}">{{p.name}}</option></select></td></tr>
+    <tr><td>Quantity: </td><td><input type="text" [(ngModel)]="requestline.quantity" size=10></td></tr>
+    </table>
+    <br>
+    <button (click)="save()" class="btn btn-success">Save Request</button>
+    <button id="delete" class="btn btn-danger" (click)="delete()">Delete Request</button>
+    
+</div>

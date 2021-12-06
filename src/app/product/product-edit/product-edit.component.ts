@@ -68,7 +68,7 @@ export class ProductEditComponent implements OnInit {
         if(res.isConfirmed) {
           this.confirm();
         } else if (res.isDismissed) {
-          this.router.navigateByUrl("/product/detail/{{product.id}}");
+          this.router.navigateByUrl("/product/edit/{{product.id}}");
         }
       })
     }

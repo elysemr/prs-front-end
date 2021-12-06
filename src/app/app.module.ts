@@ -34,11 +34,11 @@ import { RequestListComponent } from './request/request-list/request-list.compon
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
 import { RequestCreateComponent } from './request/request-create/request-create.component';
-import { RequestLinesComponent } from './request/request-lines/request-lines.component';
-import { RequestReviewComponent } from './request/request-review/request-review.component';
 import { RequestReviewLinesComponent } from './request/request-review-lines/request-review-lines.component';
 import { ReqSearchPipe } from './request/req-search.pipe';
 import { UsernamePipe } from './request/username.pipe';
+import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
+import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
 
 @NgModule({
   declarations: [
@@ -72,11 +72,11 @@ import { UsernamePipe } from './request/username.pipe';
     RequestDetailComponent,
     RequestEditComponent,
     RequestCreateComponent,
-    RequestLinesComponent,
-    RequestReviewComponent,
     RequestReviewLinesComponent,
     ReqSearchPipe,
-    UsernamePipe
+    UsernamePipe,
+    RequestlineEditComponent,
+    RequestlineCreateComponent
     
   ],
   imports: [
