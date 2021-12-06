@@ -40,6 +40,7 @@ import { UsernamePipe } from './request/username.pipe';
 import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
 import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
 import { RequestLineComponent } from './request/request-line/request-line.component';
+import { ReviewItemComponent } from './request/review-item/review-item.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { RequestLineComponent } from './request/request-line/request-line.compon
     UsernamePipe,
     RequestlineEditComponent,
     RequestlineCreateComponent,
-    RequestLineComponent
+    RequestLineComponent,
+    ReviewItemComponent
     
   ],
   imports: [
