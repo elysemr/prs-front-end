@@ -19,16 +19,15 @@ export class RequestlineEditComponent implements OnInit {
   id: any;
   requestline!: Requestline;
   products!: Product[];
-  requests!: Request[];
   confirmDelete: boolean = false;
 
   constructor(private route: ActivatedRoute, private router: Router, private reqsvc: RequestService, private prodsvc: ProductService, private rlsvc: RequestLineService, private syssvc: SystemService) { }
 
   ngOnInit(): void {
-    this.prodsvc.getByPk(this.id).subscribe({
+    this.prodsvc.list().subscribe({
       next: (res) => {
-        console.debug("Products:", this.products);
-        res as Product;
+        console.debug("Products:", res);
+        this.products = res as Product[];
       }
     })
 
@@ -49,7 +48,7 @@ export class RequestlineEditComponent implements OnInit {
       next: (res: any) => {
         console.log(res, "Changes saved.")
         res as Requestline;
-        this.router.navigateByUrl("/request/lines");
+        this.router.navigateByUrl(`/request/line/${this.requestline.requestId}`);
       },
       error: (err: any) => {
         console.error(err);
@@ -81,7 +80,7 @@ export class RequestlineEditComponent implements OnInit {
     this.rlsvc.deleteRequestline(this.requestline.id).subscribe({
       next: (res: any) => {
         console.debug(res, "Request deleted.");
-        this.router.navigateByUrl("/request/lines");
+        this.router.navigateByUrl("/request/list");
         
       }
     })

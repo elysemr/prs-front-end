@@ -15,9 +15,8 @@ import { Requestline } from '../requestline.class';
 export class RequestlineCreateComponent implements OnInit {
 
   id: any;
-  requestline!: Requestline;
+  requestline: Requestline = new Requestline();
   products!: Product[];
-  requests!: Request[];
   confirmDelete: boolean = false;
 
   constructor(private router: Router, private reqsvc: RequestService, private prodsvc: ProductService, private rlsvc: RequestLineService, private syssvc: SystemService) { }
@@ -34,9 +33,9 @@ export class RequestlineCreateComponent implements OnInit {
   save(): void {
     this.rlsvc.addRequestline(this.requestline).subscribe({
       next: (res: any) => {
-        console.log(res, "Request added.")
+        console.log(res, "Requestline added.")
         res as Requestline;
-        this.router.navigateByUrl("/request/lines");
+        this.router.navigateByUrl(`/request/line/${this.requestline.requestId}`);
       },
       error: (err: any) => {
         console.error(err);

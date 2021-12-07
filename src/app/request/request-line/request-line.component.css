@@ -1,0 +1,17 @@
+h3, h4, h5 {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+
+table {
+    margin-left: 15px;
+}
+
+a {
+    margin-bottom: 20px;
+}
+
+#new {
+    margin-left: 10px;
+}

@@ -47,8 +47,8 @@ export class RequestReviewLinesComponent implements OnInit {
      }
    
      ngOnInit(): void {
-       this.syssvc.checkLogin();
-       this.refresh();
+       //this.syssvc.checkLogin();
+       //this.refresh();
      }
    
    }

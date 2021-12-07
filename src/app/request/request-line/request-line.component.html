@@ -2,12 +2,12 @@
 <div *ngIf="request">
 <br>
 <h3>Requests</h3><h4>|</h4>
-<button type="button" class="btn btn-link"><a id="btn" routerLink="/product/list">Back to product list</a></button>
+<button type="button" class="btn btn-link"><a id="btn" routerLink="/request/list">Back to requests</a></button>
+<br>
 <h5>Item: {{request.description}} | User: {{request.userId}}</h5>
 <br>
 <table class="table table-sm">
     <thead>
-        <th>Id</th>
         <th>Description</th>
         <th>Justification</th>
         <th>Rejection Reason</th>
@@ -19,7 +19,6 @@
     </thead>
     <tbody>
         <tr>
-                <td>{{request.id}}</td>
                 <td>{{request.description}}</td>
                 <td>{{request.justification}}</td>
                 <td>{{request.rejectionReason | null}}</td>
@@ -27,11 +26,12 @@
                 <td>{{request.status}}</td>
                 <td>{{request.total | currency}}</td>
                 <td>{{request.userId}}</td>
+                <td><button class="btn btn-warning btn-sm" (click)="review(request)">Review</button>
             </tr>
     </tbody>
 </table>
 <h5>Requestlines</h5> <h4>|</h4>
-<a routerLink="requestline/create/{{request.id}}">Add New</a>
+<a id="new" routerLink="/requestline/create/{{request.id}}">Add New</a>
 <br>
 <table class="table table-sm table-hover">
 <thead>
@@ -48,7 +48,8 @@
     <td>{{rl.quantity}}</td>
     <td>{{(rl.product !== undefined ? rl.product.price : -1) | currency}}</td>
     <td>{{rl.quantity * (rl.product !== undefined ? rl.product.price : -1) | currency}}</td>
-    <td><button (click)="editRl(rl.id)" class="btn btn-warning btn-sm">Edit</button> | <button (click)="deleteRl(rl.id)" class="btn btn-danger btn-sm">Delete</button></td>
+    <td><button (click)="editRl(rl.id)" class="btn btn-warning btn-sm">Edit</button> | 
+        <button (click)="deleteRl(rl.id)" class="btn btn-danger btn-sm">Delete</button></td>
 </tbody>
 </table>
 
