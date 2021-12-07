@@ -4,6 +4,7 @@ import { User } from '../user.class';
 import { UserService } from '../user.service';
 import Swal from 'sweetalert2';
 import { identifierModuleUrl } from '@angular/compiler';
+import { SystemService } from '../system.service';
 
  @Component({
   selector: 'app-user-list',
@@ -19,7 +20,7 @@ export class UserListComponent implements OnInit {
 
 
   constructor(
-    private usrsvc: UserService, private router: Router
+    private usrsvc: UserService, private router: Router, private syssvc: SystemService
   ) {}
 
   ngOnInit(): void {

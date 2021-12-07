@@ -48,7 +48,7 @@
     <td>{{rl.quantity}}</td>
     <td>{{(rl.product !== undefined ? rl.product.price : -1) | currency}}</td>
     <td>{{rl.quantity * (rl.product !== undefined ? rl.product.price : -1) | currency}}</td>
-    <td><button (click)="editRl(rl.id)" class="btn btn-warning btn-sm"></button> | <button (click)="deleteRl(rl.id)" class="btn btn-danger btn-sm"></button></td>
+    <td><button (click)="editRl(rl.id)" class="btn btn-warning btn-sm">Edit</button> | <button (click)="deleteRl(rl.id)" class="btn btn-danger btn-sm">Delete</button></td>
 </tbody>
 </table>
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SystemService } from 'src/app/user/system.service';
 import Swal from 'sweetalert2';
 import { Product } from '../product.class';
 import { ProductService } from '../product.service';
@@ -17,7 +18,7 @@ export class ProductListComponent implements OnInit {
   confirmDelete: boolean = false;
 
   constructor(
-    private prodsvc: ProductService,
+    private prodsvc: ProductService, private syssvc: SystemService
   ) { }
 
   ngOnInit(): void {

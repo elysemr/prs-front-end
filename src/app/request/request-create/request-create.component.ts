@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SystemService } from 'src/app/user/system.service';
 import { Request } from '../request.class';
 import { RequestService } from '../request.service';
 
@@ -13,7 +14,7 @@ export class RequestCreateComponent implements OnInit {
   request: Request = new Request();
 
 
-  constructor(private reqsvc: RequestService, private router: Router) { }
+  constructor(private reqsvc: RequestService, private router: Router, private syssvc: SystemService) { }
 
   save(): void {
     this.reqsvc.addRequest(this.request).subscribe({

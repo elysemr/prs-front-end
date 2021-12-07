@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SystemService } from 'src/app/user/system.service';
 import Swal from 'sweetalert2';
 import { Vendor } from '../vendor.class';
 import { VendorService } from '../vendor.service';
@@ -15,7 +16,7 @@ export class VendorEditComponent implements OnInit {
   vendor!: Vendor;
   confirmDelete: boolean = false;
 
-  constructor(private route: ActivatedRoute, private vndsvc: VendorService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private vndsvc: VendorService, private router: Router, private syssvc: SystemService) { }
 
   ngOnInit(): void {
     let id = +this.route.snapshot.params["id"];

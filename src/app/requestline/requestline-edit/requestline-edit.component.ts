@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import { RequestLineService } from '../request-line.service';
 import { Requestline } from '../requestline.class';
 import { Request } from 'src/app/request/request.class';
+import { SystemService } from 'src/app/user/system.service';
 
 @Component({
   selector: 'app-requestline-edit',
@@ -21,7 +22,7 @@ export class RequestlineEditComponent implements OnInit {
   requests!: Request[];
   confirmDelete: boolean = false;
 
-  constructor(private route: ActivatedRoute, private router: Router, private reqsvc: RequestService, private prodsvc: ProductService, private rlsvc: RequestLineService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private reqsvc: RequestService, private prodsvc: ProductService, private rlsvc: RequestLineService, private syssvc: SystemService) { }
 
   ngOnInit(): void {
     this.prodsvc.getByPk(this.id).subscribe({

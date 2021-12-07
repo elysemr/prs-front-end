@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { SystemService } from '../system.service';
 import { User } from '../user.class';
 import { UserService } from '../user.service';
 
@@ -17,7 +18,7 @@ export class UserEditComponent implements OnInit {
   pw2!: string;
   confirmDelete: boolean = false;
   
-  constructor(private route: ActivatedRoute, private usersvc: UserService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private usersvc: UserService, private router: Router, private syssvc: SystemService) { }
   
   ngOnInit(): void {
     let id = +this.route.snapshot.params["id"];

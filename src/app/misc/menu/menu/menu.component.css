@@ -1,7 +1,19 @@
-nav { background-color: #454545;}
+nav, #name { background-color: #454545;
+        display: inline-block;
+    }
+
+    nav {
+        width: 85%;
+    }
 
 ul{
     margin: 0; 
     padding: 0;
+}
+
+#name {
+    text-align: right;
+    color: silver;
+    margin-right: 7px;
 }
 

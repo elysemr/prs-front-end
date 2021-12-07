@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/product/product.class';
 import { ProductService } from 'src/app/product/product.service';
 import { RequestService } from 'src/app/request/request.service';
+import { SystemService } from 'src/app/user/system.service';
 import { RequestLineService } from '../request-line.service';
 import { Requestline } from '../requestline.class';
 
@@ -19,7 +20,7 @@ export class RequestlineCreateComponent implements OnInit {
   requests!: Request[];
   confirmDelete: boolean = false;
 
-  constructor(private router: Router, private reqsvc: RequestService, private prodsvc: ProductService, private rlsvc: RequestLineService) { }
+  constructor(private router: Router, private reqsvc: RequestService, private prodsvc: ProductService, private rlsvc: RequestLineService, private syssvc: SystemService) { }
 
   ngOnInit(): void {
     this.prodsvc.list().subscribe({

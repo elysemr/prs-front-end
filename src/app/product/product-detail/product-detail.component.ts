@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SystemService } from 'src/app/user/system.service';
 import Swal from 'sweetalert2';
 import { Product } from '../product.class';
 import { ProductService } from '../product.service';
@@ -16,7 +17,7 @@ export class ProductDetailComponent implements OnInit {
 
   confirmDelete: boolean = false;
 
-  constructor(private route: ActivatedRoute, private prodsvc: ProductService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private prodsvc: ProductService, private router: Router, private syssvc: SystemService) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params["id"];

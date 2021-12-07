@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SystemService } from 'src/app/user/system.service';
 import { Vendor } from 'src/app/vendor/vendor.class';
 import { VendorService } from 'src/app/vendor/vendor.service';
 import Swal from 'sweetalert2';
@@ -18,7 +19,7 @@ export class ProductEditComponent implements OnInit {
   vendors!: Vendor[];
   confirmDelete: boolean = false;
 
-  constructor( private route: ActivatedRoute, private prodsvc: ProductService, private router: Router, private vndsvc: VendorService) { }
+  constructor( private route: ActivatedRoute, private prodsvc: ProductService, private router: Router, private vndsvc: VendorService, private syssvc: SystemService) { }
 
   ngOnInit(): void {
     this.vndsvc.list().subscribe({

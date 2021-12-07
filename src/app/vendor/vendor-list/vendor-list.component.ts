@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SystemService } from 'src/app/user/system.service';
 import Swal from 'sweetalert2';
 import { Vendor } from '../vendor.class';
 import { VendorService } from '../vendor.service';
@@ -17,7 +18,7 @@ export class VendorListComponent implements OnInit {
   confirmDelete: boolean = false;
 
   constructor(
-    private vndsvc: VendorService, private router: Router
+    private vndsvc: VendorService, private router: Router, private syssvc: SystemService
   ) { }
 
   ngOnInit(): void {

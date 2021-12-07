@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SystemService } from 'src/app/user/system.service';
 import { Menu } from '../menu.class';
 
 @Component({
@@ -7,6 +8,10 @@ import { Menu } from '../menu.class';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+
+  get name() {
+    return this.sysvc.getLoggedInUser()?.username
+  }
 
   menus: Menu[] = [
     new Menu("Home", "/home"), 
@@ -19,7 +24,7 @@ export class MenuComponent implements OnInit {
     new Menu("Help", "/help"), 
   ]
 
-  constructor() { }
+  constructor(private sysvc: SystemService) { }
 
   ngOnInit(): void {
   }

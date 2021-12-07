@@ -5,6 +5,7 @@ import { UserService } from 'src/app/user/user.service';
 import { RequestService } from '../request.service';
 import { Request } from '../request.class';
 import Swal from 'sweetalert2';
+import { SystemService } from 'src/app/user/system.service';
 
 @Component({
   selector: 'app-request-edit',
@@ -18,7 +19,7 @@ export class RequestEditComponent implements OnInit {
   users!: User[];
   confirmDelete: boolean = false;
 
-  constructor(private route: ActivatedRoute, private reqsvc: RequestService, private router: Router, private usrsvc: UserService) { }
+  constructor(private route: ActivatedRoute, private reqsvc: RequestService, private router: Router, private usrsvc: UserService, private syssvc: SystemService) { }
 
   ngOnInit(): void {
     let id = +this.route.snapshot.params["id"];

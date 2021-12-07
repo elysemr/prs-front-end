@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SystemService } from '../system.service';
 import { User } from '../user.class';
 import { UserService } from '../user.service';
 
@@ -14,7 +15,7 @@ export class UserCreateComponent implements OnInit {
   pw!: string;
   pw2!: string;
 
-  constructor(private usersvc: UserService, private router: Router) { }
+  constructor(private usersvc: UserService, private router: Router, private syssvc: SystemService) { }
 
   ngOnInit(): void {
   }

@@ -20,7 +20,7 @@ export class RequestReviewLinesComponent implements OnInit {
       this.reqsvc.toApprove(request).subscribe({
         next: (res) => {
           console.debug("Request approved.", res);
-          this.router.navigateByUrl("/request/review-lines");
+          this.router.navigateByUrl("/request/review-list");
         }
       });
      }
@@ -29,14 +29,14 @@ export class RequestReviewLinesComponent implements OnInit {
        this.reqsvc.toReject(request).subscribe({
          next: (res) => {
            console.debug("Request rejected.", res);
-           this.router.navigateByUrl("/request/review-lines");
+           this.router.navigateByUrl("/request/review-list");
          }
        });
      }
   
    
      refresh() : void {
-       let userId = this.syssvc.loggedInUser.id;
+       let userId = this.syssvc.loggedInUser().id;
        this.reqsvc.reviews(userId).subscribe({
          next: (res) => {
            console.debug("Requests in review", res);

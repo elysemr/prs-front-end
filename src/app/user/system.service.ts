@@ -9,7 +9,7 @@ const noUser = new User();
 })
 export class SystemService {
 
-  loggedInUser: User = noUser;
+  loggedInUser: any;
   loginRequired!: boolean; 
 
   constructor(private router: Router) { }
@@ -31,7 +31,7 @@ checkLogin() {
     console.warn("Turn on forced login.");
     return;
   }
-  if(this.loggedInUser === noUser) {
+  if(this.getLoggedInUser() === noUser) {
   this.router.navigateByUrl("/user/login");
 }
 

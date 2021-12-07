@@ -29,12 +29,13 @@ export class UserLoginComponent implements OnInit {
       next: (res) => {
         console.debug(`${this.username} is logged in.`);
         this.syssvc.setUser(res as User);
-     this.router.navigateByUrl("/request/list");
+     this.router.navigateByUrl("request/list");
      },
      error: (err) => {
        if(err.error.status == 404) {
-         this.notify = "Username and/or password are incorrect.";
-         return;
+      this.notify = "Username and/or password are incorrect.";
+      return;
+
        }
        console.debug(err);
      }

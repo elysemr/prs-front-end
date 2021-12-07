@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { RequestService } from '../request.service';
 import { Request } from '../request.class';
 import Swal from 'sweetalert2';
+import { SystemService } from 'src/app/user/system.service';
 
 @Component({
   selector: 'app-request-detail',
@@ -16,7 +17,7 @@ request!: Request;
 
 confirmDelete: boolean = false;
 
-  constructor(private route: ActivatedRoute, private reqsvc: RequestService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private reqsvc: RequestService, private router: Router, private syssvc: SystemService) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params["id"];

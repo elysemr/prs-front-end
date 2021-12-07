@@ -21,7 +21,7 @@ export class RequestLineComponent implements OnInit {
   constructor(private syssvc: SystemService, private reqsvc: RequestService, private rlsvc: RequestLineService, private route: ActivatedRoute, private router: Router, usersvc: UserService) { }
   
   editRl(id: number): void {
-    this.router.navigateByUrl(`/requestline/edit/${id}`);
+    this.router.navigateByUrl(`/requestline/edit${id}`);
   }
 
     deleteRl(id: number): void {
@@ -51,7 +51,7 @@ export class RequestLineComponent implements OnInit {
   review(request: Request): void {
     this.reqsvc.toReview(request).subscribe({
       next: (res) => {
-        console.debug("Request reviewed.");
+        console.debug("Request set to review.");
         this.refresh();
       }
     })
@@ -59,8 +59,8 @@ export class RequestLineComponent implements OnInit {
 
 
   ngOnInit(): void {
-    // this.syssvc.chkLoggedIn();
-    // this.refresh();
+    this.syssvc.checkLogin();
+    this.refresh();
   }
 
 }
