@@ -1,0 +1,32 @@
+h3 {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+h4 {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#back {
+    margin-bottom: 10px;
+}
+
+h5 {
+    margin-left: 10px;;
+}
+
+table {
+    margin-left: 15px;
+}
+
+#approve {
+    display: inline-block;
+    margin-left: 15px;
+    margin-right: 0px;
+}
+
+#reject {
+    display: inline-block;
+    margin-left: 10px;
+}

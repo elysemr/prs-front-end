@@ -1,12 +1,13 @@
 <app-menu></app-menu>
 <div>
 <br>
-<h3>Requests to Review</h3><h4>|</h4>
+<h3>Requests to Review</h3><h4>|</h4><label>Search Requests: </label>
 <input [(ngModel)]="searchCriteria" type="text">
+<br>
 <br>
 <table class="table table-sm">
     <thead>
-        <th>Description</th>
+        <th>Product</th>
         <th>Justification</th>
         <th>Delivery Mode</th>
         <th>Status</th> 
@@ -14,13 +15,13 @@
         <th>User</th>
     </thead>
     <tbody>
-        <tr *ngFor="let request of requests">
+        <tr *ngFor="let request of requests | reqSearch: searchCriteria">
                 <td>{{request.description}}</td>
                 <td>{{request.justification}}</td>
                 <td>{{request.deliveryMode}}</td>
                 <td>{{request.status}}</td>
                 <td>{{request.total | currency}}</td>
-                <td>{{request.userId}}</td>
+                <td>{{request.userUsername}}</td>
                 <td><button class="btn btn-warning btn-sm"><a routerLink="/request/review/{{request.id}}">Review</a></button></td>
             </tr>
     </tbody>

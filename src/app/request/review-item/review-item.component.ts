@@ -60,8 +60,8 @@ export class ReviewItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.syssvc.chkLoggedIn():
-    // this.refresh();
+    this.syssvc.checkLogin();
+    this.refresh();
   }
 
 }

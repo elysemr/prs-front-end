@@ -1,0 +1,33 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: red;
+}
+
+h4 {
+    display: inline-block;
+    margin-left: 12px;
+    margin-right: 1px;
+}
+
+h3 {
+    margin-left: 10px;
+    display: inline-block;
+}
+
+table {
+    margin-left: 15px;
+}
+
+label {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+input {
+    display: inline-block;
+    margin-left: 5px;
+}
