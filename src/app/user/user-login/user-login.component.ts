@@ -19,6 +19,7 @@ export class UserLoginComponent implements OnInit {
   constructor(private syssvc: SystemService, private usrsvc: UserService, private router: Router) { }
 
   ngOnInit(): void {
+    console.debug("ngOnInit()");
     this.login();
   }
   ngOnDestroy(): void {}
@@ -29,6 +30,7 @@ export class UserLoginComponent implements OnInit {
       next: (res) => {
         console.debug(`${this.username} is logged in.`);
         this.syssvc.setUser(res as User);
+        let loggedInUser = User;
      this.router.navigateByUrl("request/list");
      },
      error: (err) => {

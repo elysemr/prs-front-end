@@ -3,7 +3,7 @@ nav, #name { background-color: #454545;
     }
 
     nav {
-        width: 85%;
+        width: 87%;
     }
 
 ul{
@@ -14,6 +14,6 @@ ul{
 #name {
     text-align: right;
     color: silver;
-    margin-right: 7px;
+    margin-right: 1px;
 }
 

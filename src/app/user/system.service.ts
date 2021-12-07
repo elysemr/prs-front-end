@@ -9,7 +9,7 @@ const noUser = new User();
 })
 export class SystemService {
 
-  loggedInUser: any;
+  loggedInUser: any = null;
   loginRequired!: boolean; 
 
   constructor(private router: Router) { }
