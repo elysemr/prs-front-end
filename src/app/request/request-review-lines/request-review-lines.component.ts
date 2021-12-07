@@ -14,7 +14,7 @@ export class RequestReviewLinesComponent implements OnInit {
   searchCriteria: string = "";
   requests: Request[] = [];
 
-  constructor(private route: ActivatedRoute, private syssvc: SystemService, private router: Router, private reqsvc: RequestService) { }
+  constructor(private syssvc: SystemService, private router: Router, private reqsvc: RequestService) { }
 
     approve(request: Request): void {
       this.reqsvc.toApprove(request).subscribe({
@@ -36,7 +36,7 @@ export class RequestReviewLinesComponent implements OnInit {
   
    
      refresh() : void {
-       let userId = this.syssvc.loggedInUser().id;
+       let userId = this.syssvc.loggedInUser.id;
        this.reqsvc.reviews(userId).subscribe({
          next: (res) => {
            console.debug("Requests in review", res);
