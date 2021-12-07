@@ -1,13 +1,18 @@
 #login {
-width: 40%;
-border: 2px black;
-margin-left: 200px;
-margin-right: 200px;
-margin-top: 150px;
-
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;;
+    width: 40%;
+    border-style: solid;
+    padding: 15px;
+     
 }
 
-h2.center {
-    margin: auto;
+h2 {
+    text-align: center;
 }
+
+
+
+
 

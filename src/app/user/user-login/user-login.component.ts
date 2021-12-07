@@ -11,7 +11,7 @@ import { UserService } from '../user.service';
 })
 export class UserLoginComponent implements OnInit {
 
-  users!: User;
+
   username: string = "";
   password: string = "";
   notify: string = "";
@@ -21,6 +21,7 @@ export class UserLoginComponent implements OnInit {
   ngOnInit(): void {
     this.login();
   }
+  ngOnDestroy(): void {}
 
   login(): void {
     this.syssvc.clearUser();
@@ -28,7 +29,7 @@ export class UserLoginComponent implements OnInit {
       next: (res) => {
         console.debug(`${this.username} is logged in.`);
         this.syssvc.setUser(res as User);
-     this.router.navigateByUrl("/requests/list");
+     this.router.navigateByUrl("/request/list");
      },
      error: (err) => {
        if(err.error.status == 404) {
