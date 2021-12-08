@@ -39,15 +39,15 @@ deleteRequest(id: number): Observable<any> {
 }
 
 toReview(request: Request): Observable<any> {
-  return this.httpsvc.put(`${this.baseurl}/review/${request.id}`, request) as Observable<any>;
+  return this.httpsvc.put(`${this.baseurl}/review`, request) as Observable<any>;
 }
 
 toApprove(request: Request): Observable<any> {
-  return this.httpsvc.put(`${this.baseurl}/approve/${request.id}`, request) as Observable<any>; 
+  return this.httpsvc.put(`${this.baseurl}/approve`, request) as Observable<any>; 
 }
 
 toReject(request: Request): Observable<any> {
-  return this.httpsvc.put(`${this.baseurl}/reject/${request.id}`, request) as Observable<any>;
+  return this.httpsvc.put(`${this.baseurl}/reject`, request) as Observable<any>;
 }
 
 }

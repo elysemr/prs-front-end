@@ -2,15 +2,15 @@
 <div>
 
     <br>
-    <h3>Create Request</h3>
+    <h3>Add Line</h3>
     <br>
     <table>
-    <tr><td>Id: </td><td><input type="text" [(ngModel)]="requestline.requestId" size=3 disabled></td></tr>
+    <tr><td>Id: </td><td><input type="text" [(ngModel)]="requestline.id" size=3 disabled></td></tr>
     <tr><td>Product: </td><td><select [(ngModel)]="requestline.productId"><option *ngFor="let p of products" value="{{p.id}}">{{p.name}}</option></select></td></tr>
     <tr><td>Quantity: </td><td><input type="number" [(ngModel)]="requestline.quantity" size=10></td></tr>
     </table>
     <br>
-    <button (click)="save()" class="btn btn-success">Save Request</button>
+    <button (click)="save()" class="btn btn-success">Save</button>
     <button type="button" class="btn btn-secondary"><a id="btn" routerLink="/request/list">Cancel</a></button>
 
     

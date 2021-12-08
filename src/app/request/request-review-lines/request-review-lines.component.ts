@@ -20,7 +20,7 @@ export class RequestReviewLinesComponent implements OnInit {
       this.reqsvc.toApprove(request).subscribe({
         next: (res) => {
           console.debug("Request approved.", res);
-          this.router.navigateByUrl("/request/review-list");
+          this.router.navigateByUrl("/request/review-lines");
         }
       });
      }
@@ -29,26 +29,25 @@ export class RequestReviewLinesComponent implements OnInit {
        this.reqsvc.toReject(request).subscribe({
          next: (res) => {
            console.debug("Request rejected.", res);
-           this.router.navigateByUrl("/request/review-list");
+           this.router.navigateByUrl("/request/review-lines");
          }
        });
      }
   
    
      refresh() : void {
-       let userId = this.syssvc.loggedInUser().id;
+       let userId = this.syssvc.getLoggedInUser().id;
        this.reqsvc.reviews(userId).subscribe({
          next: (res) => {
            console.debug("Requests in review", res);
            this.requests = res as Request[];
-           this.requests.forEach(r => r.userUsername = r.user !== undefined ? r.user.username : "missing");
          }
        })
      }
    
      ngOnInit(): void {
-       //this.syssvc.checkLogin();
-       //this.refresh();
+       this.syssvc.checkLogin();
+       this.refresh();
      }
    
    }

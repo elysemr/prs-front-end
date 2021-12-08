@@ -29,7 +29,7 @@
                 <td>{{request.deliveryMode}}</td>
                 <td>{{request.status}}</td>
                 <td>{{request.total | currency}}</td>
-                <td>{{request.userId}}</td>
+                <td>{{request.user.username}}</td>
                 <td><a routerLink="/request/detail/{{request.id}}">Detail</a> | 
                     <a routerLink="/requestline/edit/{{request.id}}">Edit</a> |
                     <a routerLink="/request/line/{{request.id}}">Lines</a></td>

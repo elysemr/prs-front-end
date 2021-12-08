@@ -17,10 +17,11 @@ export class RequestCreateComponent implements OnInit {
   constructor(private reqsvc: RequestService, private router: Router, private syssvc: SystemService) { }
 
   save(): void {
+    this.request.userId = this.syssvc.getLoggedInUser().id;
     this.reqsvc.addRequest(this.request).subscribe({
       next: (res) => {
         console.log("Request created.");
-        this.router.navigateByUrl(`/requests/lines/${res.id}`);
+        this.router.navigateByUrl("/requests/list");
       },
       error: (err) => {
         console.error(err);

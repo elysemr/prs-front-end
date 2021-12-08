@@ -7,32 +7,25 @@
 <br>
 <table class="table table-sm">
     <thead>
+        <th>Id</th>
         <th>Description</th>
-        <th>Justification</th>
         <th>Rejection Reason</th>
-        <th>Delivery Mode</th>
         <th>Status</th> 
         <th>Total</th>
         <th>User</th>
     </thead>
     <tbody>
         <tr>
+                <td>{{request.id}}</td>
                 <td>{{request.description}}</td>
-                <td>{{request.justification}}</td>
                 <td>{{request.rejectionReason | null}}</td>
-                <td>{{request.deliveryMode}}</td>
                 <td>{{request.status}}</td>
                 <td>{{request.total | currency}}</td>
-                <td>{{request.userId}}</td>
+                <td>{{request.user.username}}</td>
             </tr>
     </tbody>
 </table>
-    <button id="approve" (click)="approve(request)" class="btn btn-outline-success btn-sm">Approve</button>
-<button id="reject" (click)="rejectionReason()" class="btn btn-outline-danger btn-sm">Reject</button>
-<div *ngIf="displayRejection">
-    <input type="text" [(ngModel)]="request.rejectionReason" size=50>
-    <button (click="reject(request)" class="btn btn-danger btn-sm")>Reject Request</button>
-</div>
+
 <br>
 <br>
 <h5>All requests for {{request.description}}</h5>
@@ -46,7 +39,7 @@
             <th>Subtotal</th>
         </tr>
     </thead>
-    <tbody *ngFor="let rl of request.requestline">
+    <tbody *ngFor="let rl of request.requestLines">
         <td>{{rl.id}}</td>
         <td>{{rl.product !== undefined ? rl.product.name : "missing"}}</td>
         <td>{{rl.quantity}}</td>
@@ -54,5 +47,12 @@
         <td>{{rl.quantity * (rl.product !== undefined ? rl.product.price : -1) | currency}}</td>
     </tbody>
 </table>
+
+<button id="approve" (click)="approve(request)" class="btn btn-outline-success btn-sm">Approve</button>
+<button id="reject" (click)="rejectionReason()" class="btn btn-outline-danger btn-sm">Reject</button>
+<div *ngIf="displayRejection">
+    <input type="text" [(ngModel)]="request.rejectionReason" size=50>
+    <button (click)="reject(request)" class="btn btn-danger btn-sm")>Reject Request</button>
+</div>
 
 </div>

@@ -8,6 +8,7 @@
 <br>
 <table class="table table-sm">
     <thead>
+        <th>Id</th>
         <th>Description</th>
         <th>Justification</th>
         <th>Rejection Reason</th>
@@ -19,6 +20,7 @@
     </thead>
     <tbody>
         <tr>
+                <td>{{request.id}}</td>
                 <td>{{request.description}}</td>
                 <td>{{request.justification}}</td>
                 <td>{{request.rejectionReason | null}}</td>
@@ -42,9 +44,9 @@
     <th>Subtotal</th>
     <th>Actions</th>
 </thead>
-<tbody *ngFor="let rl of request.requestline">
+<tbody *ngFor="let rl of request.requestLines">
     <td>{{rl.id}}</td>
-    <td>{{rl.product}}</td>
+    <td>{{rl.product?.name}}</td>
     <td>{{rl.quantity}}</td>
     <td>{{(rl.product !== undefined ? rl.product.price : -1) | currency}}</td>
     <td>{{rl.quantity * (rl.product !== undefined ? rl.product.price : -1) | currency}}</td>

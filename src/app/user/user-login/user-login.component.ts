@@ -20,7 +20,6 @@ export class UserLoginComponent implements OnInit {
 
   ngOnInit(): void {
     console.debug("ngOnInit()");
-    this.login();
   }
   ngOnDestroy(): void {}
 
@@ -31,7 +30,7 @@ export class UserLoginComponent implements OnInit {
         console.debug(`${this.username} is logged in.`);
         this.syssvc.setUser(res as User);
         let loggedInUser = User;
-     this.router.navigateByUrl("request/list");
+     this.router.navigateByUrl("request/review-lines");
      },
      error: (err) => {
        if(err.error.status == 404) {

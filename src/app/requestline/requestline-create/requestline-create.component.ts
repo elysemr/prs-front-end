@@ -19,9 +19,10 @@ export class RequestlineCreateComponent implements OnInit {
   products!: Product[];
   confirmDelete: boolean = false;
 
-  constructor(private router: Router, private reqsvc: RequestService, private prodsvc: ProductService, private rlsvc: RequestLineService, private syssvc: SystemService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private prodsvc: ProductService, private rlsvc: RequestLineService, private syssvc: SystemService) { }
 
   ngOnInit(): void {
+    this.requestline.requestId = +this.route.snapshot.params["id"];
     this.prodsvc.list().subscribe({
       next: (res) => {
         console.debug("Products:", res);
