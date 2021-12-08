@@ -16,6 +16,7 @@ export class RequestListComponent implements OnInit {
   searchCriteria: string = "";
   confirmDelete: boolean = false;
 
+
   constructor(
     private reqsvc: RequestService, private router: Router, private syssvc: SystemService
   ) { }
@@ -31,5 +32,7 @@ export class RequestListComponent implements OnInit {
       }
     });
   }
+
+
 
 }

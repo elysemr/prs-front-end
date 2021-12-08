@@ -1,9 +1,9 @@
-nav, #name { background-color: #454545;
+nav { background-color: #454545;
         display: inline-block;
+        width: 100%;
     }
 
     nav {
-        width: 87%;
     }
 
 ul{
@@ -13,7 +13,8 @@ ul{
 
 #name {
     text-align: right;
-    color: silver;
-    margin-right: 1px;
+    color: #454545;
+    margin-right: 5px;
+    
 }
 

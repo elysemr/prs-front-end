@@ -41,6 +41,7 @@ import { RequestlineEditComponent } from './requestline/requestline-edit/request
 import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
 import { RequestLineComponent } from './request/request-line/request-line.component';
 import { ReviewItemComponent } from './request/review-item/review-item.component';
+import { StatusPipe } from './request/status.pipe';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { ReviewItemComponent } from './request/review-item/review-item.component
     RequestlineEditComponent,
     RequestlineCreateComponent,
     RequestLineComponent,
-    ReviewItemComponent
+    ReviewItemComponent,
+    StatusPipe
   
   ],
   imports: [
