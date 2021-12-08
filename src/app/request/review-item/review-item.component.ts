@@ -43,6 +43,7 @@ export class ReviewItemComponent implements OnInit {
     this.reqsvc.toReview(request).subscribe({
       next: (res) => {
         console.debug("Request has been reviewed.");
+        this.router.navigateByUrl("/request/review-list");
         this.refresh();
       }
     })
@@ -54,7 +55,6 @@ export class ReviewItemComponent implements OnInit {
       next: (res) => {
         console.debug("Request:", res as Request);
         this.request = res as Request;
-        this.request.userUsername = this.request.user !== undefined ? this.request.user.username : "missing";
       }
     })
   }

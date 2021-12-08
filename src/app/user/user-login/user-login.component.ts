@@ -29,7 +29,6 @@ export class UserLoginComponent implements OnInit {
       next: (res) => {
         console.debug(`${this.username} is logged in.`);
         this.syssvc.setUser(res as User);
-        let loggedInUser = User;
      this.router.navigateByUrl("request/review-lines");
      },
      error: (err) => {

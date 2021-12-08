@@ -80,7 +80,8 @@ import { ReviewItemComponent } from './request/review-item/review-item.component
     RequestlineEditComponent,
     RequestlineCreateComponent,
     RequestLineComponent,
-    ReviewItemComponent    
+    ReviewItemComponent
+  
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,
