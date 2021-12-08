@@ -19,7 +19,8 @@ label {
 }
 
 table{
-    margin-left: 12px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h2 {

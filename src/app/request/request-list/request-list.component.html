@@ -30,11 +30,8 @@
                 <td>{{request.status}}</td>
                 <td>{{request.total | currency}}</td>
                 <td>{{request.user.username}}</td>
-                <td><a routerLink="/request/detail/{{request.id}}">Detail</a> | 
-                    <a routerLink="/requestline/edit/{{request.id}}">Edit</a> |
+                <td><a routerLink="/requestline/edit/{{request.id}}">Edit</a> |
                     <a routerLink="/request/line/{{request.id}}">Lines</a></td>
-                    <!-- | 
-                    <button id="delete" class="btn btn-danger btn-sm" (click)="delete()">Delete</button> -->
                 
             </tr>
         </tbody>

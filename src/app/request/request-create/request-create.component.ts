@@ -14,6 +14,7 @@ export class RequestCreateComponent implements OnInit {
   request: Request = new Request();
 
 
+
   constructor(private reqsvc: RequestService, private router: Router, private syssvc: SystemService) { }
 
   save(): void {
@@ -21,7 +22,7 @@ export class RequestCreateComponent implements OnInit {
     this.reqsvc.addRequest(this.request).subscribe({
       next: (res) => {
         console.log("Request created.");
-        this.router.navigateByUrl("/requests/list");
+        this.router.navigateByUrl("/request/list");
       },
       error: (err) => {
         console.error(err);
