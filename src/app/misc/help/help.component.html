@@ -1,9 +1,11 @@
+<div id="img" [ngStyle]="{backgroundImage:'url(./assets/photo/theoffice2.jpg)'}">
+
 <app-menu></app-menu>
-<div id="help">
+<div id="help" class="border border-light">
 <h3>Need help? You've come to the right place.</h3>
 <br>
 <div>
-Here's how to navigate PRS:
+Here's how to navigate PRS: <br>
 Once you're logged in, which will display at the top right of your screen, you've got five basic parts: 
 <a routerLink="/user/list">users</a>, 
 <a routerLink="/vendor/list">vendors</a>, 
@@ -15,39 +17,41 @@ This is your guide to what they do.
 </div>
 <br>
 <div>
-    <h4>Users</h4>
+    <h4><a routerLink="/user/list">Users</a></h4>
     Users is the home for all the members of the staff. Every employee has an account with certain privileges.
     Only admins can create a new user when someone is hired or change a user's information. Admins and reviewers have different 
     privileges from each other, and additional privilages to users. If you cannot access something on the site, your privileges could be why.
     In the user part of PRS, you can add, edit, and delete users based on what your login allows you to do.
 </div>
-
+<br>
 <div>
-    <h4>Vendors</h4>
+    <h4><a routerLink="/vendor/list">Vendors</a></h4>
     Vendors is the home for the companies Dunder Mifflin purchases from. Similarly to users, vendors can be added, edited, and deleted.
     Vendors are connected to the products they provide, which all come together in the requests.
 </div>
-
+<br>
 <div>
-    <h4>Products</h4>
+    <h4><a routerLink="/product/list">Products</a></h4>
     Products shows what products are available to request through PRS. Products can be added, and information can be edited and deleted.
 </div>
-
+<br>
 <div>
-    <h4>Requests</h4>
+    <h4><a routerLink="/request/list">Requests</a></h4>
     Requests are where users and products come together. When a user has a need for a product, they submit a request, add lines of product(s) they want in
     the request, and submit it through the system. Once it's submitted it will be put up for review, and a reviewer will approve or reject the request. If the request 
     total is less than 50 dollars, it will be approved automatically once it's reviewed. A reviewer cannot review their own requests.
 </div>
-
+<br>
 <div>
-    <h4>Requests in Review</h4>
+    <h4><a routerLink="/request/review-lines">Requests in Review</a></h4>
     Requests in review are where those with the necessary permissions can review the requests with a status that reads "review." Reviewers will assess if the item and
     justification warrant an approval, and if not, they will provide a reason for rejecting the request. If you navigate to the reviews page and there is nothing listed, either you are
     not logged in, you do not have permissions, or there are no requests requiring review.
 </div>
-
+<br>
 <div>
     More questions about PRS? Check out the <a routerLink="/about">about</a> page to learn a little more.
 </div>
+<br>
+<div id="pc">Photo via NBCUniversal</div>
 </div>
