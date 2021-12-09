@@ -16,6 +16,8 @@ export class RequestLineComponent implements OnInit {
   
   request!: Request;
   user!: User;
+
+  statusStyle: string = "bold";
  
 
   constructor(private syssvc: SystemService, private reqsvc: RequestService, private rlsvc: RequestLineService, private route: ActivatedRoute, private router: Router, usersvc: UserService) { }
@@ -41,6 +43,7 @@ export class RequestLineComponent implements OnInit {
         console.debug("Request:", res);
         this.request = res as Request;
         this.request.user !== undefined ? this.request.user.username : null;
+        this.setStatusColor(this.request.status);
       },
       error: err => {
         console.error(err);
@@ -61,6 +64,13 @@ export class RequestLineComponent implements OnInit {
   ngOnInit(): void {
     this.syssvc.checkLogin();
     this.refresh();
+  }
+
+  setStatusColor(status:string): void {
+    if(status === "REVIEW") {this.statusStyle = "text-warning bold";}
+    if(status === "APPROVED") {this.statusStyle = "text-success bold";}
+    if(status === "REJECTED") {this.statusStyle = "text-danger bold";}
+    if(status === "EDIT") {this.statusStyle = "text-primary bold";}
   }
 
 }

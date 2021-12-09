@@ -25,9 +25,9 @@
                 <td>{{request.justification}}</td>
                 <td>{{request.rejectionReason | null}}</td>
                 <td>{{request.deliveryMode}}</td>
-                <td>{{request.status}}</td>
+                <td><span [ngClass]="statusStyle">{{request.status}}</span></td>
                 <td>{{request.total | currency}}</td>
-                <td>{{request.userId}}</td>
+                <td>{{request.user.username}}</td>
                 <td><button class="btn btn-warning btn-sm" (click)="review(request)">Review</button>
             </tr>
     </tbody>
