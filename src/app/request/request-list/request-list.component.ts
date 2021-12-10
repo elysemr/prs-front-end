@@ -15,6 +15,13 @@ export class RequestListComponent implements OnInit {
   request!: Request;
   searchCriteria: string = "";
   confirmDelete: boolean = false;
+  statusStyles: any = {
+    NEW: "bold",
+    EDIT: "text-primary bold",
+    REVIEW: "text-warning bold",
+    APPROVED: "text-success bold",
+    REJECTED: "text-danger bold"
+  };
 
 
   constructor(
@@ -26,6 +33,8 @@ export class RequestListComponent implements OnInit {
       next: (res) => {
         console.debug("Requests", res);
         this.requests = res as Request[];
+        for(let r of this.requests){
+        r.statusStyle = this.statusStyles[r.status]; }
       },
       error: (err) => {
         console.error(err);

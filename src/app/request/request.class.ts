@@ -17,5 +17,7 @@ user!: User;
 
 requestLines!: Requestline[];
 
+statusStyle!: string;
+
 constructor() {}
 }
