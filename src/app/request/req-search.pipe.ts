@@ -15,9 +15,10 @@ export class ReqSearchPipe implements PipeTransform {
         a.description.toString().toLowerCase().includes(searchCriteria) ||
         a.justification.toString().toLowerCase().includes(searchCriteria) ||
         a.deliveryMode.toString().toLowerCase().includes(searchCriteria) ||
+        a.rejectionReason?.toString().toLowerCase().includes(searchCriteria) ||
         a.status.toString().toLowerCase().includes(searchCriteria) ||
         a.total.toString().toLowerCase().includes(searchCriteria) ||
-        a.user?.name.toString().toLowerCase().includes(searchCriteria)
+        a.user?.username.toString().toLowerCase().includes(searchCriteria)
       ) {
         selArr.push(a);
       }
